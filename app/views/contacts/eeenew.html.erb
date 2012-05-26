@@ -1,0 +1,56 @@
+<div style="height:300px; width: 350px;"><%= form_tag contacts_path do %>
+  <div></div>
+    <table>
+      <tr>
+        <td>First Name:</td>
+        <td>
+          <%=text_field  :contact , :fname %>
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td>
+          <%=text_field  :contact , :lname %>
+        </td>
+      </tr>
+      <tr>
+        <td> Address:</td>
+        <td>
+          <%=text_field  :contact , :address %>
+        </td>
+      </tr>
+      <tr>
+        <td> City:</td>
+
+        <td>
+          <%=text_field  :contact , :city %>
+        </td>
+      </tr>
+      <tr>
+        <td> State:</td>
+        <td>
+          <%=text_field  :contact , :state %>
+        </td>
+      </tr>
+      <tr>
+        <td> Country:</td>
+
+        <td>
+          <%=text_field  :contact , :country %>
+        </td>
+      </tr>
+      <tr>
+        <td> Mobile:</td>
+        <td>
+          <%=text_field  :contact , :mobile %>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td colspan="2">
+          <%=submit_tag 'Contact' %>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+</div>

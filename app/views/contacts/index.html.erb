@@ -1,0 +1,52 @@
+<div id="flashnotice" class="notice"><%= flash[:notice] %></div>
+<div style="height:10px;"></div>
+<div class="FL" style="margin:0 0 0 680px;">
+  <div class="FL submits">
+    <a class="fancyframe NFButton" href="/contacts/new">New Contact</a>
+  </div>
+  <div class="FL botton_right"></div>
+  <div class="clear"></div>
+</div>
+
+<div class="FL" style="margin:0 0 0 10px;">
+  <div class="FL">
+    <%= link_to "Log out" ,destroy_user_session_path , :class=>"NFButton" %>
+  </div>
+  <div class="FL botton_right"></div>
+  <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="top_table">
+  <div class="innar_table">
+    <table width="100%" border="0" padding="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="table_headtext">First Name</td>
+        <td class="table_headtext">Last Name</td>
+        <td class="table_headtext">Address</td>
+        <td class="table_headtext">City</td>
+        <td class="table_headtext" colspan="3" align="center">Action</td>
+      </tr>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td class="table_text"><%= contact.fname%></td>
+          <td class="table_text"><%= contact.lname%></td>
+          <td class="table_text"><%= contact.address%></td>
+          <td class="table_text"><%= contact.city%></td>
+
+          <td class="table_text">
+            <%= link_to "Show" ,contact_path(:id=>contact.id), :class=>"fancyframe" %>
+          </td>
+          <td class="table_text">
+            <%= link_to "Edit" ,edit_contact_path(:id=>contact.id), :class=>"fancyframe" %>
+          </td>
+          <td class="table_text">
+            <%= link_to "Delete" ,delete_contact_path(:id=>contact.id) , :onclick=>" return delete_contact();" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<div class="clear"></div>
+
+

@@ -1,0 +1,30 @@
+<div style="width: 400px;">
+  <%= form_for @contact do |f|%>
+    <div style="margin-left:130px;">
+      <% if params[:action]=="new" %>
+        <h2>New Contact</h2>
+      <% else %>
+        <h2>  Update Contact</h2>
+      <% end %>
+    </div>
+    <div class="FL text_label">First Name</div>
+    <div class="FL text_field"> <%= f.text_field :fname , :required=>"required" %></div>
+    <div class="clear clear_height"></div>
+
+    <div class="FL text_label">Last Name</div>
+    <div class="FL text_field"> <%= f.text_field :lname , :required=>"required"  %></div>
+    <div class="clear clear_height"></div>
+
+    <div class="FL text_label">Address</div>
+    <div class="FL text_field"> <%= f.text_field :address , :required=>"required" %></div>
+    <div class="clear clear_height"></div>
+
+    <div class="FL text_label">City</div>
+    <div class="FL text_field"> <%= f.text_field :city , :required=>"required"  %></div>
+    <div class="clear clear_height"></div>
+
+    <div style="margin-left:130px;"><%= f.submit "Save" if params[:action]=="new"%> <%= f.submit "Update" if params[:action]=="edit"%></div>
+
+  <% end %>
+</div>
+

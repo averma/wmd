@@ -1,0 +1,49 @@
+<div id="flashnotice" class="notice">
+<%= flash[:notice] %><%= flash[:alert] %>
+</div>
+
+<div style="height:10px;"></div>
+<% if user_signed_in? %>
+  <div class="FL" style="margin-left:680px;">
+    <div class="FL submits">
+      <%=link_to "Contacts" ,contacts_path ,:class=>"NFButton" %>
+    </div>
+    <div class="FL botton_right"></div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="FL" style="margin-left:20px;">
+    <div class="FL">
+      <%= link_to "Log out" ,destroy_user_session_path ,:class=>"NFButton" %>
+    </div>
+    <div class="FL botton_right"></div>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+<% else %>
+
+  <div class="FL" style="margin-left:680px;">
+    <div class="FL submits">
+      <a class="fancyframe NFButton" href="/users/sign_up">Registration</a>
+    </div>
+    <div class="FL botton_right"></div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="FL" style="margin-left:20px;">
+    <div class="FL">
+      <a class="fancyframe NFButton" href="/users/sign_in">Login</a>
+    </div>
+    <div class="FL botton_right"></div>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+<% end %>
+
+
+
+
+
+
+
+
